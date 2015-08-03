@@ -1,5 +1,5 @@
 # Project Name #
-
+Writelet
 <!-- 
 > This material was originally posted [here](http://www.quora.com/What-is-Amazons-approach-to-product-development-and-product-management). It is reproduced here for posterities sake.
 
@@ -17,25 +17,28 @@ Once the project moves into development, the press release can be used as a touc
  -->
  
 ## Heading ##
-  > Name the product in a way the reader (i.e. your target customers) will understand.
+  Writelet
 
 ## Sub-Heading ##
-  > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  Giving a chance for all learners to respond.
 
 ## Summary ##
-  > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Writelet is a simple application that allows teachers to write questions for all students to answer. Teachers can pose discussion topics to learners or solicit examples and explanations from learners. By asking all learners to response, teachers can get a better sense of what students are thinking for what teachers deem to be the most critical content in a lesson.
 
 ## Problem ##
   > Describe the problem your product solves.
+  Learners in a wide range of learning environments don't always get a chance to participate. One traditional classroom approach relies on cold calling students on a per question basis. This approach is often used to sample student understanding, but it only allows one or a few students to demonstrate their thinking. Cold calling also does not allow educators to know the spectrum of language (the words students actually use) or understanding that learners have for a given topic. To further complicate matters, teachers may be unconciously biased in who they choose to cold call. Teachers may be call on certain genders more favorably, or they may call on particular students knowing the quality of the answer that they would expect from the learner. While the latter tactic can be used effectively to draw out student misconceptions, it can leave students feeling on the hook for a correct repsonse or embarrassed about their misconceptions. There should be a way better to involve all learners and to let teachers more quickly check for understanding.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+  Writelet allow teachers to pose questions or prompts to all students. Students can then submit responses, which can be viewed anonymously to all other students. While teachers have access to all responses and the corresponding names of the learners, students can only view the submissions and not who wrote them. This can alleviate the stress for students to respond with the "correct" answer, and it also allows learners to take more risks in voicing their thoughts. Teachers also have the option of showing particular responses to guide classroom discussion or to gauge students current understanding of a topic in a short time window. Writelet can be used in physical classroom, synchronous digital learning enviroments, or even async learning environments, which makes it a useful tool for any educator.
 
 ## Quote from You ##
-  > A quote from a spokesperson in your company.
+
 
 ## How to Get Started ##
   > Describe how easy it is to get started.
+  To get started, go to writelet.com. A teacher can create a question. That question will generate a link that all students can use to submit their responses. No registration is required by the teacher, but if a teacher would like to set up tracking of student responses, then the teacher can set up a class roster and student's can
 
 ## Customer Quote ##
   > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
