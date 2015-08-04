@@ -1,18 +1,18 @@
-var Prompt  = require('./promptModel');
+var Prompt    = require('./promptModel'),
+    shortid   = require('shortid');
 
 module.exports = {
 
-  getPrompt: function (req, res, next, id) {
-
+  getPrompt: function (req, res, next, shortid) {
     Prompt.find({
-      where: {id: id}
+      where: {'shortid': shortid}
     })
       .then(function (prompt) {
         if (prompt) {
-          req.prompt = prompt;
+          res.json(prompt);
           next();
         } else {
-          next(new Error('Prompt not added yet'));
+          next(new Error('Prompt not does not exist in the database.'));
         }
       })
       .fail(function (error) {
@@ -21,7 +21,7 @@ module.exports = {
   },
 
   addNewPrompt: function (req, res, next) {
-    console.log(req.body);
+    req.body.shortid = shortid.generate();
     Prompt.create(req.body)
       .then(function (createdPrompt) {
         if (createdPrompt) {
