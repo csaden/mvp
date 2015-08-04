@@ -2,12 +2,14 @@
 
   <form name='questionForm' ng-submit='addPrompt()' novalidate>
 
-    <input class='text' name='text' ng-model='prompt' placeholder='enter a question or a prompt' required/>
+    <div class="form-group">
+      <label for="prompt">Your Prompt</label>
+      <textarea class='text' name='prompt' ng-model='prompt.text' placeholder='enter a question or a topic for people to respond to' msd-elastic="/n" autofocus required></textarea>
+    </div>
 
+    <div ng-if='questionForm.url.$error.required && questionForm.url.$isdirty' class='alert'>Please enter a prompt.</div>
 
-    <div ng-if='shortenForm.url.$error.required && shortlyForm.url.$isdirty' class='alert'>Please enter a url.</div>
-
-    <input class='btn-primary' type='submit' value='Submit Prompt' ng-disabled='questionForm.$invalid'/>
+    <button class='btn btn-lg btn-send' type='submit' ng-disabled='questionForm.$invalid'>Submit Prompt</button>
 
   </form>
 
