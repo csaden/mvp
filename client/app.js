@@ -3,35 +3,11 @@ angular.module('writelet', [
   'writelet.services',
   'writelet.home',
   'writelet.prompt',
+  'monospaced.elastic',
   'ngFx'
 ])
 
 .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
-  // pass in $routeProvider for this code
-  // $routeProvider
-  //   .when('/signin', {
-  //     templateUrl: 'app/auth/signin.html',
-  //     controller: 'AuthController'
-  //   })
-  //   .when('/signup', {
-  //     templateUrl: 'app/auth/signup.html',
-  //     controller: 'AuthController'
-  //   })
-  //   .when('/signout', {
-  //     templateUrl: 'app/auth/signout.html',
-  //     controller: 'AuthController'
-  //   })
-  //   .when('/links', {
-  //     templateUrl: 'app/links/links.html',
-  //     controller: 'LinksController'
-  //   })
-  //   .when('/shorten', {
-  //     templateUrl: 'app/shorten/shorten.html',
-  //     controller: 'ShortenController'
-  //   })
-  //   .otherwise({
-  //     redirectTo: '/links'
-  //   });
 
   $urlRouterProvider.otherwise('/writelet');
 
@@ -61,9 +37,9 @@ angular.module('writelet', [
       url: '/createPrompt',
       controller: 'PromptController'
     })
-    .state('respond', {
-      templateUrl: 'app/respond/respond.html',
-      url: '/respond',
+    .state('response', {
+      templateUrl: 'app/response/response.html',
+      url: '/response',
       controller: 'ResponseController'
     });
 
