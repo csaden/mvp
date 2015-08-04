@@ -4,7 +4,9 @@
 
 var express        = require('express'),
     bodyParser     = require('body-parser'),
-    methodOverride = require('method-override');
+    methodOverride = require('method-override'),
+    Prompt         = require('../prompts/promptModel'),
+    Response       = require('../responses/responseModel');
 
 //========================
 // configuration
@@ -12,6 +14,11 @@ var express        = require('express'),
 
 // db config
 var db = require('./config/db.js');
+
+Prompt.hasMany(Response);
+Response.belongsTo(Prompt);
+
+db.sync();
 
 // set the port
 var port = process.env.PORT || 8080;
