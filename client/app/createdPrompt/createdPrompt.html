@@ -1,8 +1,15 @@
 <div id='createdPrompt'>
-  <div>{{ prompt }}</div>
-  <div>Link:<a href="#/response/{{ prompt.shortid }}">#/response/{{ prompt.shortid }}</a></div>
-  <div><strong>Your prompt:</strong></div>
-  <div>{{ prompt.text }}</div>
+  <div class='link-container'>
+    <div><strong>Link to Share:</strong><em class='respondLink'>(anyone can respond to your prompt by clicking on the link)</em></div>
+    <div><a href="#/response/{{ prompt.shortid }}">#/response/{{ prompt.shortid }}</a></div>
+  </div>
+  <div class="prompt-container">
+    <div><strong>Your prompt:</strong></div>
+    <div>{{ prompt.text }}</div>
+  </div>
   <button class='btn btn-lg btn-send' ng-click='getResponses()'>Get Responses</button>
-  <div ng-show='responses.length'>No responses yet.</div>
+  <div ng-show='{{ responses ? true : false }}'>No responses yet.</div>
+  <div ng-repeat='{{ response in responses}}'>
+
+  </div>
 </div>

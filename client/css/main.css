@@ -41,21 +41,12 @@ a:hover {
 }
 
 .home {
-  width: 100%;
-  text-align: center;
+  width: 450px;
+  margin: 0 auto
 }
 
 .home-btns, .promptHelp {
   display: inline-block;
-}
-
-.promptLink {
-  display: block;
-}
-
-.promptHelp {
-  max-width: 400px;
-  text-align: left;
 }
 
 .glyphicon {
@@ -87,8 +78,20 @@ a:hover {
   background-color: #B66233;
 }
 
+.respondLink {
+  color: #666;
+  font-size: .8em;
+  margin-left: 10px;
+}
+
 textarea {
   overflow: hidden;
   padding: 4px;
   min-width: 80%;
+}
+
+.prompt-container, .link-container {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
 }
