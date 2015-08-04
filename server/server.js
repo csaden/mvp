@@ -5,28 +5,31 @@
 var express        = require('express'),
     bodyParser     = require('body-parser'),
     methodOverride = require('method-override'),
-    Prompt         = require('../prompts/promptModel'),
-    Response       = require('../responses/responseModel');
+    db             = require('./config/db'),
+    Prompt         = require('./prompts/promptModel'),
+    Response       = require('./responses/responseModel');
 
 //========================
 // configuration
 //========================
 
 // db config
-var db = require('./config/db.js');
-
 Prompt.hasMany(Response);
 Response.belongsTo(Prompt);
 
-db.sync();
+db.sync({force: true})
+  .then(function() {
+    console.log('Connected to database!');
+  })
+  .error(function(error) {
+    console.log('Could not connect to the database');
+    console.log(error);
+  });
 
 // set the port
 var port = process.env.PORT || 8080;
 
 var app = express();
-
-db.connect('mongodb://localhost/writelet'); // connect to SQL database named writelet
-
 
 // configure our server with all the middleware and and routing
 require('./config/middleware.js')(app, express);
@@ -39,7 +42,7 @@ require('./config/middleware.js')(app, express);
 app.listen(port);
 
 // shoutout to the user
-console.log('Magic happens on port ' + port);
+console.log('Server magic happens on port ' + port);
 
 // export our app for testing and flexibility, required by index.js
 module.exports = app;
