@@ -1,0 +1,34 @@
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1, p {
+  padding-left: 20px;
+}
+
+a:hover {
+ cursor:pointer;
+}
+
+.main {
+  width: 100%;
+  text-align: center;
+}
+
+.home-btns, .promptHelp {
+  display: inline-block;
+}
+
+a.promptLink {
+  display: block;
+}
+
+.promptHelp {
+  max-width: 400px;
+  text-align: left;
+}
+
+.glyphicon {
+  margin: 15px;
+}

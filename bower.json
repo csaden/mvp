@@ -1,0 +1,27 @@
+{
+  "name": "writelet",
+  "version": "0.0.0",
+  "homepage": "https://github.com/csaden/2015-06-mvp",
+  "authors": [
+    "Chris Saden <csaden@gmail.com>"
+  ],
+  "description": "an outlet for student responses",
+  "main": "app.js",
+  "keywords": [
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "latest",
+    "angular-ui-router": "latest",
+    "bootstrap": "latest",
+    "ngFx": "latest"
+  }
+}

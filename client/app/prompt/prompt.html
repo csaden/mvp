@@ -1,0 +1,16 @@
+<div id='prompt' class='create'>
+
+  <form name='questionForm' ng-submit='addPrompt()' novalidate>
+
+    <input class='text' name='text' ng-model='prompt' placeholder='enter a question or a prompt' required/>
+
+
+    <div ng-if='shortenForm.url.$error.required && shortlyForm.url.$isdirty' class='alert'>Please enter a url.</div>
+
+    <input class='btn-primary' type='submit' value='Submit Prompt' ng-disabled='questionForm.$invalid'/>
+
+  </form>
+
+  <img class='spinner' ng-if='loading' src='../../assets/spiffygif_46x46.gif'>
+
+</div>

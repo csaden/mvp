@@ -1,0 +1,12 @@
+{
+  "name": "writelet",
+  "main": "app.js",
+  "dependencies": {
+    "body-parser": "^1.4.3",
+    "express": "~4.5.1",
+    "method-override": "~2.0.2",
+    "morgan": "^1.6.1",
+    "mysql": "^2.8.0",
+    "sequelize": "^3.5.1"
+  }
+}
