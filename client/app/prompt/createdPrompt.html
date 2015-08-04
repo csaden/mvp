@@ -1,0 +1,7 @@
+<div id='createdPrompt'>
+  <div>Link:<a href="#/response/{{prompt.id}}">#/response/{{prompt.id}}</a></div>
+  <div>Your prompt:</div>
+  <div>{{ prompt.text }}</div>
+  <button class='btn btn-lg btn-send' ng-click='getResponses()'>Get Responses</button>
+  <div ng-show='responses.length'>No responses yet.</div>
+</div>
