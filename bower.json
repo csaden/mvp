@@ -22,6 +22,7 @@
     "angular": "latest",
     "angular-ui-router": "latest",
     "bootstrap": "latest",
-    "ngFx": "latest"
+    "ngFx": "latest",
+    "angular-elastic": "~2.5.0"
   }
 }
