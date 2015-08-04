@@ -16,7 +16,7 @@ angular.module('writelet.services', [])
   var getPrompt = function(shortid) {
     return $http({
       method: 'GET',
-      url: '/api/prompt' + shortid
+      url: '/api/prompt/' + shortid
     })
     .then(function (resp) {
       return resp.data;
