@@ -5,15 +5,26 @@
     <title>Writelet</title>
     <link rel="stylesheet" type="text/css" href="lib/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Josefin+Slab' rel='stylesheet' type='text/css'>
   </head>
   <body ng-app='writelet'>
 
-    <h1>Writelet</h1>
-    <p>A simpler way to gather thoughts from a crowd.</p>
+    <div class="title-bar">
+        <div class="title">Writelet</div>
+        <span class="subtitle">...a simpler way to gather thoughts from a crowd</span>
+    </div>
+
+    <div class='navigation'>
+<!--       <ul>
+        <li><a href='#/createPrompt' class='index'>Create a Prompt</a></li>
+        <li><a href='#/response' class='create'>Write A Response</a></li>
+        <li><a href='#/signout' class='logout'>Signout</a></li>
+      </ul> -->
+    </div>
 
     <!-- the ui-view directive is for angular-ui-router to load a view (or nested views) -->
     <!-- can have multiple ui-views! -->
-    <div ui-view></div>
+    <div class="main" ui-view></div>
 
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.17.0/TweenMax.min.js"></script>
@@ -21,6 +32,7 @@
     <script src="lib/angular/angular.js"></script>
     <!-- // <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script> -->
     <script src="lib/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="lib/angular-elastic/elastic.js"></script>
     <script src="lib/angular-animate/angular-animate.min.js"></script>
     <script src="lib/ngFx/dist/ngFx.min.js"></script>
 
