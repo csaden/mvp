@@ -9,6 +9,7 @@ angular.module('writelet.prompt', [])
     $scope.loading = true;
     Prompt.addPrompt($scope.prompt)
       .then(function(prompt) {
+        console.log(prompt);
         $scope.loading = false;
         $scope.prompt = prompt;
         $location.path('/prompt/' + prompt.id);

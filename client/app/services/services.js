@@ -5,7 +5,7 @@ angular.module('writelet.services', [])
   var addPrompt = function (prompt) {
     return $http({
       method: 'POST',
-      url: '/api/prompts',
+      url: '/api/prompt',
       data: prompt
     })
     .then(function (resp) {
