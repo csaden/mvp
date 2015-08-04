@@ -1,12 +1,15 @@
 var Sequelize = require('sequelize'),
-    shortid   = require('shortid'),
     db        = require('../config/db');
 
 var Prompt = db.define('Prompt', {
-  id : {
-    type: Sequelize.TEXT,
+  id: {
+    type: Sequelize.UUID,
     primaryKey: true,
-    defaultValue: shortid.generate()
+    defaultValue: Sequelize.UUIDV4
+  },
+  shortid: {
+    type: Sequelize.TEXT,
+    allowNull: false
   },
   text: {
     type: Sequelize.TEXT,
