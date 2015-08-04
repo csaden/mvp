@@ -9,7 +9,7 @@ angular.module('writelet', [
 
 .config(function($httpProvider, $stateProvider, $urlRouterProvider) {
 
-  $urlRouterProvider.otherwise('/writelet');
+  $urlRouterProvider.otherwise('');
 
   $stateProvider
     // .state('signin', {
@@ -29,12 +29,17 @@ angular.module('writelet', [
     // })
     .state('home', {
       templateUrl: 'app/home/home.html',
-      url: '/writelet',
+      url: '',
       controller: 'HomeController'
     })
     .state('prompt', {
       templateUrl: 'app/prompt/prompt.html',
       url: '/createPrompt',
+      controller: 'PromptController'
+    })
+    .state('promptDetails', {
+      templateUrl: 'app/prompt/createdPrompt.html',
+      url: '/prompt/:id',
       controller: 'PromptController'
     })
     .state('response', {
@@ -46,55 +51,7 @@ angular.module('writelet', [
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
     // $httpProvider.interceptors.push('AttachTokens');
-})
-
-//.controller('PromptController', function PromptController($scope, $location, Prompts) {
-.controller('PromptController', function PromptController($scope, $location) {
-  $scope.prompt = {};
-  $scope.loading = false;
-  $scope.promptHelp = false;
-
-  // $scope.togglePromptHelp = function() {
-  //   $scope.promptHelp = !$scope.promptHelp;
-  //   console.log($scope.promptHelp);
-  // };
-
-  // $scope.addPrompt = function () {
-  //   $scope.loading = true;
-  //   Prompts.addPrompt($scope.prompt)
-  //     .then(function(prompt) {
-  //       $scope.loading = false;
-  //       $location.path('/');
-  //     })
-  //     .catch(function(error) {
-  //       console.log(error);
-  //     });
-  // };
 });
-
-
-// .controller('PromptController', function PromptController($scope, $location, Prompts) {
-//   $scope.prompt = {};
-//   $scope.loading = false;
-//   $scope.promptHelp = false;
-
-//   $scope.togglePromptHelp = function() {
-//     $scope.promptHelp = !$scope.promptHelp;
-//     console.log($scope.promptHelp);
-//   };
-
-//   $scope.addPrompt = function () {
-//     $scope.loading = true;
-//     Prompts.addPrompt($scope.prompt)
-//       .then(function(prompt) {
-//         $scope.loading = false;
-//         $location.path('/');
-//       })
-//       .catch(function(error) {
-//         console.log(error);
-//       });
-//   };
-// });
 // .factory('AttachTokens', function ($window) {
 //   // this is an $httpInterceptor
 //   // its job is to stop all out going request

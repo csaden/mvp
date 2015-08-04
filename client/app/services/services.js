@@ -1,6 +1,6 @@
 angular.module('writelet.services', [])
 
-.factory('Prompts', function ($http) {
+.factory('Prompt', function ($http) {
 
   var addPrompt = function (prompt) {
     return $http({
@@ -9,12 +9,23 @@ angular.module('writelet.services', [])
       data: prompt
     })
     .then(function (resp) {
-      return resp;
+      return resp.data;
+    });
+  };
+
+  var getResponses = function(prompt) {
+    return $http({
+      method: 'GET',
+      url: '/api/responses/' + prompt.id,
+    })
+    .then(function (resp) {
+      return resp.data;
     });
   };
 
   return {
-    addPrompt: addPrompt
+    addPrompt: addPrompt,
+    getResponses: getResponses
   };
 
 });
