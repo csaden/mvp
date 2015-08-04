@@ -1,15 +1,15 @@
-var questionController = require('./questionController');
+var promptController = require('./promptController');
 
 module.exports = function (app) {
   // app === linkRouter injected from middleware.js
 
   // app.param will hijack any request with a 'code' parameter
-  app.param('code', questionController.findQuestion);
+  app.param('id', promptController.getPrompt);
 
   app.route('/')
-    .get(questionController.allQuestions)
-    .post(questionController.newQuestion);
+    // .get(promptController.allPrompts);
+    .post(promptController.addNewPrompt);
 
-  app.get('/:code', questionController.navToQuestion);
+  app.get('/:id', promptController.navToPrompt);
 
 };

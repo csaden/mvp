@@ -1,17 +1,53 @@
 var Prompt  = require('./promptModel'),
     Q       = require('q');
 
-module.exports = function (app) {
+module.exports = {
 
-  // app === promptRouter injected from middleware.js
+  getPrompt: function (req, res, next, id) {
+    var findPrompt = Q.nbind(Prompt.find, Prompt);
 
-  // app.param will hijack any request with a 'code' parameter
-  app.param('code', promptController.findPrompt);
+    findPrompt({
+      where: {id: id}
+    })
+      .then(function (prompt) {
+        if (prompt) {
+          req.prompt = prompt;
+          next();
+        } else {
+          next(new Error('Prompt not added yet'));
+        }
+      })
+      .fail(function (error) {
+        next(error);
+      });
+  },
 
-  app.route('/')
-    .get(promptController.allPrompts)
-    .post(promptController.newPrompt);
+  addNewPrompt: function (req, res, next) {
+    var prompt = req.body.prompt;
+    console.log(req.body);
 
-  app.get('/:code', promptController.navToPrompt);
+    var createPrompt = Q.nbind(Prompt.create, Prompt);
+    var findPrompt = Q.nbind(Prompt.find, Prompt);
+
+    findPrompt({
+      where: {id: prompt.id}
+    }).then(function (match) {
+        if (match) {
+          next(new Error('The prompt with id ' + match.id + ' already exists!'));
+        } else {
+          var newPrompt = {
+            text: prompt
+          };
+          return createPrompt(newPrompt);
+        }
+      }).then(function (createdPrompt) {
+        if (createdPrompt) {
+          res.json(createdPrompt);
+        }
+      })
+      .fail(function (error) {
+        next(error);
+      });
+  }
 
 };
