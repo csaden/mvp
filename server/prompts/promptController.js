@@ -1,12 +1,10 @@
-var Prompt  = require('./promptModel'),
-    Q       = require('q');
+var Prompt  = require('./promptModel');
 
 module.exports = {
 
   getPrompt: function (req, res, next, id) {
-    var findPrompt = Q.nbind(Prompt.find, Prompt);
 
-    findPrompt({
+    Prompt.find({
       where: {id: id}
     })
       .then(function (prompt) {
@@ -23,29 +21,14 @@ module.exports = {
   },
 
   addNewPrompt: function (req, res, next) {
-    var prompt = req.body.prompt;
     console.log(req.body);
-
-    var createPrompt = Q.nbind(Prompt.create, Prompt);
-    var findPrompt = Q.nbind(Prompt.find, Prompt);
-
-    findPrompt({
-      where: {id: prompt.id}
-    }).then(function (match) {
-        if (match) {
-          next(new Error('The prompt with id ' + match.id + ' already exists!'));
-        } else {
-          var newPrompt = {
-            text: prompt
-          };
-          return createPrompt(newPrompt);
-        }
-      }).then(function (createdPrompt) {
+    Prompt.create(req.body)
+      .then(function (createdPrompt) {
         if (createdPrompt) {
           res.json(createdPrompt);
         }
       })
-      .fail(function (error) {
+      .error(function (error) {
         next(error);
       });
   }
