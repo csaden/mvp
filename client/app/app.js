@@ -3,6 +3,7 @@ angular.module('writelet', [
   'writelet.services',
   'writelet.home',
   'writelet.prompt',
+  'writelet.createdPrompt',
   'monospaced.elastic',
   'ngFx'
 ])
@@ -37,10 +38,10 @@ angular.module('writelet', [
       url: '/createPrompt',
       controller: 'PromptController'
     })
-    .state('promptDetails', {
-      templateUrl: 'app/prompt/createdPrompt.html',
-      url: '/prompt/:id',
-      controller: 'PromptController'
+    .state('createdPrompt', {
+      templateUrl: 'app/createdPrompt/createdPrompt.html',
+      url: '/prompt/:shortid',
+      controller: 'CreatedPromptController'
     })
     .state('response', {
       templateUrl: 'app/response/response.html',

@@ -6,7 +6,6 @@ angular.module('writelet.home', [])
 
   $scope.togglePromptHelp = function() {
     $scope.promptHelp = !$scope.promptHelp;
-    console.log($scope.promptHelp);
   };
 
 });

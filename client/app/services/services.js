@@ -13,6 +13,16 @@ angular.module('writelet.services', [])
     });
   };
 
+  var getPrompt = function(shortid) {
+    return $http({
+      method: 'GET',
+      url: '/api/prompt' + shortid
+    })
+    .then(function (resp) {
+      return resp.data;
+    });
+  };
+
   var getResponses = function(prompt) {
     return $http({
       method: 'GET',
@@ -25,7 +35,8 @@ angular.module('writelet.services', [])
 
   return {
     addPrompt: addPrompt,
-    getResponses: getResponses
+    getResponses: getResponses,
+    getPrompt: getPrompt
   };
 
 });
