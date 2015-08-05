@@ -1,4 +1,5 @@
-var db = require('../config/db');
+var Sequelize = require('sequelize'),
+    db        = require('../config/db');
 
 var User = db.define('User', {
   id : {
