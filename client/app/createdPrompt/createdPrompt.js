@@ -15,6 +15,10 @@ angular.module('writelet.createdPrompt', [])
       });
   };
 
+  $scope.getNumResponses = function() {
+    return $scope.responses.length;
+  };
+
   $scope.getResponses = function () {
     $scope.loading = true;
     Response.getResponses($scope.prompt)
