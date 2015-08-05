@@ -1,0 +1,33 @@
+<div id='response'>
+
+  <div class='prompt-container'>
+    <div><strong>Prompt:</strong></div>
+    <div>{{ prompt.text }}</div>
+  </div>
+
+  <form name='responseForm' ng-submit='addResponse()' novalidate>
+
+    <div class="form-group">
+      <label for="response">Your Response</label>
+      <textarea class='text' name='response' ng-model='response.text' placeholder='Enter a question or a topic for people to respond to' msd-elastic="/n" autofocus required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" name='firstname' ng-model='response.firstName' placeholder='First name'>
+    </div>
+
+    <div class='form-group'>
+      <label for="lastname">Last Name</label>
+      <input type="text" name='lastname' ng-model='response.lastName' placeholder='Last name'>
+    </div>
+
+    <div ng-if='responseForm.url.$error.required && responseForm.url.$isdirty' class='alert'>Please enter a response.</div>
+
+    <button class='btn btn-lg btn-send' type='submit' ng-disabled='responseForm.$invalid'>Submit Response</button>
+
+  </form>
+
+  <img class='spinner' ng-if='loading' src='assets/spiffygif_46x46.gif'>
+
+</div>
