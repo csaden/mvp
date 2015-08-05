@@ -12,7 +12,6 @@ module.exports = {
       })
         .then(function (prompt) {
           if (prompt) {
-            console.dir('here', prompt);
             req.data = prompt;
             next();
           } else {

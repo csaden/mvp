@@ -21,7 +21,7 @@ db.sync({force: true})
   .then(function() {
     console.log('Connected to database!');
   })
-  .error(function(error) {
+  .catch(function(error) {
     console.log('Could not connect to the database');
     console.log(error);
   });

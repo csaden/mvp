@@ -1,9 +1,9 @@
 var promptController = require('./promptController');
 
 module.exports = function (app) {
-  // app === linkRouter injected from middleware.js
+  // app === promptRouter injected from middleware.js
 
-  // app.param will hijack any request with a 'code' parameter
+  // app.param will hijack any request with a 'shortid' parameter
   app.param('shortid', promptController.getPrompt);
 
   app.route('/')
