@@ -4,6 +4,7 @@ angular.module('writelet', [
   'writelet.home',
   'writelet.prompt',
   'writelet.createdPrompt',
+  'writelet.response',
   'monospaced.elastic',
   'ngFx'
 ])
@@ -43,9 +44,14 @@ angular.module('writelet', [
       url: '/prompt/:shortid',
       controller: 'CreatedPromptController'
     })
+    // .state('writeResponse', {
+    //   templateUrl: 'app/fetchPrompt/fetchResponse.html',
+    //   url:'/findPrompt',
+    //   controller: 'FetchPromptController'
+    // })
     .state('response', {
       templateUrl: 'app/response/response.html',
-      url: '/response',
+      url: '/response/:shortid',
       controller: 'ResponseController'
     });
 

@@ -1,13 +1,12 @@
 angular.module('writelet.createdPrompt', [])
 
-.controller('CreatedPromptController', function CreatedPromptController($scope, $location, $stateParams, Prompt) {
+.controller('CreatedPromptController', function CreatedPromptController($scope, $location, $stateParams, Prompt, Response) {
   $scope.prompt = {};
   $scope.responses = [];
   $scope.loading = false;
 
-  $scope.getPrompt = function () {
-    console.log($stateParams.shortid);
-    Prompt.getPrompt($stateParams.shortid)
+  $scope.getPrompt = function (shortid) {
+    Prompt.getPrompt(shortid)
       .then(function(prompt) {
         $scope.prompt = prompt;
       })
@@ -18,7 +17,7 @@ angular.module('writelet.createdPrompt', [])
 
   $scope.getResponses = function () {
     $scope.loading = true;
-    Prompt.getResponses($scope.prompt)
+    Response.getResponses($scope.prompt)
       .then(function(responses) {
         $scope.loading = false;
         console.dir(responses);
@@ -27,5 +26,5 @@ angular.module('writelet.createdPrompt', [])
       });
   };
 
-  $scope.getPrompt();
+  $scope.getPrompt($stateParams.shortid);
 });
