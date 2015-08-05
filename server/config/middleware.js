@@ -24,4 +24,5 @@ module.exports = function (app, express) {
 
   // inject our routers into their respective route files
   require('../prompts/promptRoutes.js')(promptRouter);
+  require('../responses/responseRoutes.js')(responseRouter);
 };
