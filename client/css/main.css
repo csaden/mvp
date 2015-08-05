@@ -95,3 +95,15 @@ textarea {
   padding: 10px;
   border: 1px solid #ccc;
 }
+
+.response {
+  width: 100%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 4px;
+  border: 1px solid #ccc;
+}
+
+.response:hover {
+  background-color: #E37B40;
+}
